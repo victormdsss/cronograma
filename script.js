@@ -7,6 +7,17 @@ var htmlStatusUsers = "";
 var diaDaSemana =["dom","seg", "ter", "qua", "qui", "sex", "sab"]
 var mesDoAno =["Jan","Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
 
+$(document).ready(function(){
+    $('.carossel').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        arrows: true
+    });
+  });
+
 
 
 // VARIÁVEIS IMPORTANTES //
@@ -50,5 +61,9 @@ for(var i = 0; i <= 6; i++){
 
 function toggleUsed(_me){
     document.querySelector("."+_me).children[0].classList.add("used")
-    
+    toggleDisplay()
+}
+
+function toggleDisplay(){
+    document.querySelector(".storiesContainer").classList.toggle("storiesContaineractived")
 }

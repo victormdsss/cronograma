@@ -4,12 +4,34 @@
 	<link rel="stylesheet"
 		href="style.css">
 	<title>Instagram Clone</title>
+	<link rel="stylesheet" type="text/css" href="slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+	<!--jQuery Plugins-->
+	<script type="text/javascript" src="slick.min.js"></script>
+	
+	
 </head>
 <body>
 
 <!-- Our Header section Starts from here -->
-<div class="storiesContainer container">
+<div class="storiesContainer storiesContaineractived">
+	<div class="oi">
+		<h3 onclick="toggleDisplay()">X</h3>
+	</div>
+	<div class="storie">
+		<div class="header">
 
+		</div>
+		<div class="arte">
+			<img width="100%" src="img/stories.png" alt="">
+		</div>
+		<div class="footer">
+
+		</div>
+	</div>
 </div>
 	
 	<!-- Code for Showing the Status -->
@@ -19,59 +41,8 @@
 			<div class="col-12">
 				<div class="statuses">
 
-					<div class="stts dom">
-						<div class="status ">
-							<div class="image">
-								<img src="img/status-dom.png" alt="img3">
-							</div>
-						</div>
-						<h4>02/10</h3>
-					</div>
+					<!-- Status -->
 
-					<div class="stts seg">
-						<div class="status">
-							<div class="image">
-								<img src="img/status-seg.png" alt="img3">
-							</div>
-						</div>
-						<h4>02/10</h3>
-					</div>
-
-					<div class="stts ter">
-						<div class="status ">
-							<div class="image">
-								<img src="img/status-ter.png" alt="img3">
-							</div>
-						</div>
-						<h4>02/10</h3>
-					</div>
-					
-					<div class="stts qua">
-						<div class="status qua">
-							<div class="image">
-								<img src="img/status-qua.png" alt="img3">
-							</div>
-						</div>
-						<h4>02/10</h3>
-					</div>
-
-
-					<div class="status qui">
-						<div class="image">
-							<img src="img/status-qui.png" alt="img3">
-						</div>
-					</div>
-					<div class="status sex">
-						<div class="image">
-							<img src="img/status-sex.png" alt="img3">
-						</div>
-					</div>
-					<div class="status sab">
-						<div class="image">
-							<img src="img/status-sab.png" alt="img3">
-						</div>
-						
-					</div>
 				</div>
 				
 			<!-- Code for viewing the Post -->
@@ -80,7 +51,7 @@
 						<div class="userDetails">
 							<div class="profilepic">
 								<div class="profile_img">
-									<div class="image">
+									<div class="image ">
 										<img src="img/status-seg.png" alt="">
 									</div>
 								</div>
@@ -96,7 +67,8 @@
 							</span>
 						</div>
 					</div>
-					<div class="imgBx">
+					<div class="imgBx carossel">
+						<img width="100%" src="img/nao-agendado.png" alt="">
 						<img width="100%" src="img/nao-agendado.png" alt="">
 					</div>
 					<div class="bottom">
@@ -736,5 +708,9 @@
 		</div>
 	</main>
 	<script src="script.js"></script>
+
+	
+	
+	
 </body>
 </html>

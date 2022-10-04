@@ -511,10 +511,53 @@
     .storiesContainer{
         z-index: 999;
         width: 100%;
-        height: 500px;
-        background-color: #1a1a1a;
+        height: 100%;
+        background-color: #1a1a1ae5;
         position: fixed;
         top: 0;
         right: 0;
+        display: none;
+    }
+    .storiesContaineractived{
+        display: block;
+    }
+    .oi{
+        position: absolute;
+        top: 20px;
+        right: 70px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .storie{
+        position: relative;
+        overflow: hidden;
+        width: 337.5px;
+        height: 600px;
+        margin: 0 auto;
+        top: 50%;
+        border-radius: 10px;
+        margin-top: -300px;
+        background-color: #ddd;
     }
     
+
+    .slick-next{
+        margin-right: 50px;
+    }
+    .slick-next:before{
+        color: #262626 !important;
+        background-color: #3d3d3dcb !important;
+        border-radius: 50px;
+        padding: 2px;
+    }
+
+    .slick-prev{
+        z-index: 9999;
+        margin-left: 50px;
+    }
+    .slick-prev:before{
+        color: #262626 !important;
+        background-color: #3d3d3dcb !important;
+        border-radius: 50px;
+        padding: 2px;
+    }
