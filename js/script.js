@@ -31,6 +31,7 @@ $(document).ready(function(){
 
 // VARIÁVEIS IMPORTANTES //
 
+            
 
 
 
@@ -96,21 +97,15 @@ for(var i = 0; i <= 6; i++){
             htmlFeed +=	            '</div>';
         htmlFeed +=	            '</div>';
         htmlFeed +=	            '<div class="imgBx carossel">';
-        for(var j = 0; j <= 9; j++){
-            console.log(j)
-            var img = new Image();
+        for(var j = 1; j <= 9; j++){
+	        var url = "img/seg-folder/seg(1).png"
+            var img = '<img src="'+ url +'" />';
             var _diaDaSemana = diaDaSemana[i];
-            img.src = "img/"+_diaDaSemana+"-folder/"+(_diaDaSemana)+"("+j+").png"
-            console.log(img.onerror)
-            img.onload = function(){
-                htmlFeed += '<img width="100%" class="'+_diaDaSemana+'img" src="img/'+_diaDaSemana+'-folder/'+_diaDaSemana+' ('+j+').png" alt="">';
-                console.log(j)
-            }
-            img.onerror = function(){
-                console.log(j)
-                console.log('<img width="100%" class="'+_diaDaSemana+'img" src="img/'+_diaDaSemana+'-folder/'+_diaDaSemana+' ('+j+').png" alt="">')
-               return;
-            } 
+            
+            htmlFeed += '<img width="100%" src="img/'+diaDaSemana[i]+'-folder/'+diaDaSemana[i]+' ('+j+').png" >';
+            
+            
+            //htmlFeed +=	            '<img class="'+diaDaSemana[i]+'-feed'+j+'" width="100%" src="img/'+diaDaSemana[i]+'-folder/seg('+j+').png" onError="excluiAqui(\''+diaDaSemana[i]+'-feed'+j+'\')">';
         }
             
             htmlFeed +=	            '<img width="100%" src="img/nao-agendado.png" alt="">';
@@ -150,3 +145,13 @@ function toggleUsed(_me){
 function toggleDisplay(){
     document.querySelector(".storiesContainer").classList.toggle("storiesContaineractived");
 }
+
+
+function checkImagem(url) {
+    var img = '<img src="'+ url +'" />';
+    $(img).load(function() {
+      $('.carossel').append(url+img);
+    }).bind('error', function() {
+      alert('imagem: '+url+' não existe');
+    });
+   }
