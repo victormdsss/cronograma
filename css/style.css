@@ -484,7 +484,11 @@
             align-items: flex-start;
             justify-content: space-between;
             /* background: #ddd; */
-            }    
+        }
+        .statuses .status {
+            width: 90px;
+            height: 90px;
+        }
     .col-12 {
         width: 100%;
         background: #fafafa;
