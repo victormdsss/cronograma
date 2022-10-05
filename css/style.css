@@ -117,7 +117,7 @@
     main .container {
     position: relative;
     margin-top: 60px;
-    width: 100%;
+    width: 75%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -451,6 +451,15 @@
     }
     
     @media screen and (max-width: 1000px) {
+        main .container {
+            position: relative;
+            margin-top: 60px;
+            width: 90%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            /* background: #ddd; */
+            }
     .col-12 {
         width: 100%;
         background: #fafafa;
@@ -462,6 +471,16 @@
     }
     
     @media screen and (max-width: 600px) {
+        main .container {
+            position: relative;
+            margin-top: 60px;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            /* background: #ddd; */
+            }
+        
     .container {
         width: 100% !important;
     }

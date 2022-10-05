@@ -102,7 +102,7 @@ for(var i = 0; i <= 6; i++){
             var img = '<img src="'+ url +'" />';
             var _diaDaSemana = diaDaSemana[i];
             
-            htmlFeed += '<img width="100%" src="img/'+diaDaSemana[i]+'-folder/'+diaDaSemana[i]+' ('+j+').png" >';
+            htmlFeed += '<img width="100%" src="img/'+diaDaSemana[i]+'-folder/feed/'+diaDaSemana[i]+' ('+j+').png" >';
             
             
             //htmlFeed +=	            '<img class="'+diaDaSemana[i]+'-feed'+j+'" width="100%" src="img/'+diaDaSemana[i]+'-folder/seg('+j+').png" onError="excluiAqui(\''+diaDaSemana[i]+'-feed'+j+'\')">';
