@@ -2,13 +2,71 @@
 
 console.log("v.1.0")
 
+var controleDiaInicial = 23;
+var controleMes = 8;
+
+
 var statusContainer = document.querySelector('.statuses');
 var feedContainer = document.querySelector('.feed');
+var storiesContainer = document.querySelector('.artes');
 var htmlStatusUsers = "";
 var htmlFeed = "";
+var htmlStories= "";
+
+
 var diaDaSemana =["dom","seg", "ter", "qua", "qui", "sex", "sab"];
 var diaDaSemanaFeed =["Domingo","Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
 var mesDoAno =["Jan","Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+
+class PopulatePage{
+
+    containerOfStories = document.querySelector('.status');
+    mockupOfStories = document.querySelector('#modeloffeedcard');
+    containerOfFeed = document.querySelector('.feed');
+    mockupOfFeed = document.querySelector('#modelofstatuscard');
+    
+    constructor(_diaInicial, _mêsAtual){
+        this.diaInicial = _diaInicial;
+        this.mêsAtual = _mêsAtual;
+    }
+
+    populateWithStoriesElements(){
+        const cloneOfFeed = document.querySelector('#modelofstatuscard').cloneNode(true)
+        const containerOfFeed = document.querySelector('#modelofstatuscard').parentNode;
+        diaDaSemana.forEach((elementoDia)=>{
+            const cloneOfFeed = document.querySelector('#modelofstatuscard').cloneNode(true)
+            const containerOfFeed = document.querySelector('#modelofstatuscard').parentNode;
+            this.putDataIntoStoriesMockup(cloneOfFeed,elementoDia)
+            containerOfFeed.appendChild(cloneOfFeed)
+        })
+        containerOfFeed.removeChild(document.querySelector('#modelofstatuscard'))
+    }
+
+    putDataIntoStoriesMockup(_cloneOfFeed, _dia){
+        var lastDate = new Date();
+var ultimoDia = new Date(lastDate.getFullYear(), lastDate.getMonth() + 1, 0);
+const lastDayDate = ultimoDia.getDate();
+
+
+    for(var i = 0; i <= 6; i++){
+        var _controleMes = controleMes;
+        var diaAtual = controleDiaInicial + i;
+    
+        if(diaAtual > lastDayDate){
+            diaAtual -= lastDayDate;
+            _controleMes += 1;
+        }
+        console.log(diaAtual+'  '+_controleMes)
+    }
+
+        _cloneOfFeed.setAttribute('id','str-'+_dia);
+        _cloneOfFeed.querySelector('img').src= 'img/status-'+_dia+'.png';
+        _cloneOfFeed.querySelector('h4').innerHTML='dia/'+_dia;
+        _cloneOfFeed.setAttribute('onclick','toggleUsed('+diaDaSemana+')');
+    }
+
+}
 
 $(document).ready(function(){
     $('.carossel').slick({
@@ -24,47 +82,48 @@ $(document).ready(function(){
 
 
 
-// VARIÁVEIS IMPORTANTES //
-
-    var controleDiaInicial = 27;
-    var controleMes = 8;
 
 // VARIÁVEIS IMPORTANTES //
+
+
+// VARIÁVEIS IMPORTANTES //
+
+
+
+let slideIndex = 1;
+/**
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides"); 
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+ */
+
 
             
 
+const populatePage = new PopulatePage();
+populatePage.populateWithStoriesElements();
 
 
 
-var lastDate = new Date();
-var ultimoDia = new Date(lastDate.getFullYear(), lastDate.getMonth() + 1, 0);
-const lastDayDate = ultimoDia.getDate();
-
-
-for(var i = 0; i <= 6; i++){
-
-    var _controleMes = controleMes;
-    var diaAtual = controleDiaInicial + i;
-   
-    if(diaAtual > lastDayDate){
-        diaAtual -= lastDayDate;
-        _controleMes += 1;
-    }
-
-
-    htmlStatusUsers +=  '<div onclick="toggleUsed(\''+diaDaSemana[i]+'\')" class="stts '+diaDaSemana[i]+'">';
-    htmlStatusUsers +=      '<div class="status">';
-    htmlStatusUsers +=          '<div class="image">';
-    htmlStatusUsers +=              '<img src="img/status-'+diaDaSemana[i]+'.png" alt="img3">';
-    htmlStatusUsers +=          '</div>';
-    htmlStatusUsers +=      '</div>';
-    htmlStatusUsers +=      '<h4>'+diaAtual+'/'+mesDoAno[_controleMes+1]+'</h3>';
-    htmlStatusUsers +=  '</div>';
-
-
-    statusContainer.innerHTML = htmlStatusUsers;
-
-}
 
 for(var i = 0; i <= 6; i++){
     
@@ -113,7 +172,7 @@ for(var i = 0; i <= 6; i++){
 		htmlFeed +=	            '<div class="bottom">';
             htmlFeed +=	            '<div class="actionBtns">';
                 htmlFeed +=	            '<div class="left">';
-                    htmlFeed +=	            '<span class="heart" onclick="addlike()">';
+                    htmlFeed +=	            '<span class="heart" onclick="teste()">';
                         htmlFeed +=	            '<span>';
                             htmlFeed +=	            '<svg aria-label="Like"color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48" width="24">';
                                 htmlFeed +=             '<path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"> </path>';
@@ -140,6 +199,24 @@ function toggleUsed(_me){
     document.querySelector("."+_me).children[0].classList.add("used");
     document.querySelector("."+_me+"f").children[0].classList.add("used");
     toggleDisplay();
+    loadImgs(_me);
+}
+
+function loadImgs(__me){
+    console.log(storiesContainer)
+    for(var j = 1; j <= 9; j++){
+
+        var url = "img/seg-folder/seg("+1+").png"
+        var img = '<img src="'+ url +'" />';
+        var _diaDaSemana = diaDaSemana[i];
+        
+        htmlStories += '<img class="mySlides fade" src="img/'+__me+'-folder/stories/'+__me+' ('+j+').png" alt="Img 1">'
+        console.log(__me)
+        
+    }
+       
+    
+    storiesContainer.innerHTML = htmlStories;  
 }
 
 function toggleDisplay(){
@@ -147,11 +224,12 @@ function toggleDisplay(){
 }
 
 
-function checkImagem(url) {
-    var img = '<img src="'+ url +'" />';
-    $(img).load(function() {
-      $('.carossel').append(url+img);
-    }).bind('error', function() {
-      alert('imagem: '+url+' não existe');
-    });
-   }
+
+
+
+
+
+
+
+
+   

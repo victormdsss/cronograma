@@ -15,23 +15,20 @@
 </head>
 <body>
 
-<!-- Our Header section Starts from here -->
-<div class="storiesContainer ">
-	<div class="oi">
-		<h3 onclick="toggleDisplay()">X</h3>
+	<!-- Our Header section Starts from here -->
+	<div class="storiesContainer">
+		<div class="oi">
+			<h3 onclick="toggleDisplay()">X</h3>
+		</div>
+		
+		<div class="slide-show" >
+			<div class="artes" >
+			</div>
+		</div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
 	</div>
-	<div class="storie">
-		<div class="header">
-
-		</div>
-		<div class="arte">
-			<img width="100%" src="img/stories.png" alt="">
-		</div>
-		<div class="footer">
-
-		</div>
-	</div>
-</div>
 	
 	<!-- Code for Showing the Status -->
 	<main>
@@ -41,6 +38,14 @@
 				<div class="statuses">
 
 					<!-- Status -->
+					<div id="modelofstatuscard" class="stts diaDaSemana">
+						<div class="status">
+							<div class="image">
+								<img src="img/status-dom.png" alt="img3">
+							</div>
+						</div>
+						<h4>diaAtual / mesDoAno</h3>
+					</div>
 
 				</div>
 				
@@ -76,7 +81,7 @@
 							<div class="actionBtns">
 								<div class="left">
 									<span class="heart"
-										onclick="addlike()">
+										onclick="teste()">
 										<span>
 											<svg aria-label="Like"color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48" width="24">
 												<!-- Coordinate path -->
@@ -138,7 +143,7 @@
 							<div class="actionBtns">
 								<div class="left">
 									<span class="heart"
-										onclick="addlike()">
+										onclick="teste()">
 										<span>
 											<svg aria-label="Like"
 												color="#262626"
